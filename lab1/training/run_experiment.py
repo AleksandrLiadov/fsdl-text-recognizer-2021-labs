@@ -92,7 +92,7 @@ def main():
     trainer = pl.Trainer.from_argparse_args(args, callbacks=callbacks, logger=logger, weights_save_path="training/logs")
 
     # pylint: disable=no-member
-    trainer.tune(lit_model, datamodule=data)  # If passing --auto_lr_find, this will set learning rate
+    trainer.tune(lit_model, datamodule=data)  # I passing --auto_lr_find, this will set learning rate
 
     trainer.fit(lit_model, datamodule=data)
     trainer.test(lit_model, datamodule=data)
